@@ -4,12 +4,13 @@ import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/fire
 
 // Firebase Configuration - Replace with your own config
 const firebaseConfig = {
-  apiKey: (import.meta as any).env?.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
-  authDomain: (import.meta as any).env?.VITE_FIREBASE_AUTH_DOMAIN || "YOUR_AUTH_DOMAIN",
-  projectId: (import.meta as any).env?.VITE_FIREBASE_PROJECT_ID || "YOUR_PROJECT_ID",
-  storageBucket: (import.meta as any).env?.VITE_FIREBASE_STORAGE_BUCKET || "YOUR_STORAGE_BUCKET",
-  messagingSenderId: (import.meta as any).env?.VITE_FIREBASE_MESSAGING_SENDER_ID || "YOUR_SENDER_ID",
-  appId: (import.meta as any).env?.VITE_FIREBASE_APP_ID || "YOUR_APP_ID"
+  apiKey: "AIzaSyDTkMLE-H4GyaOs_QizCj7TeGFb8evIzic",
+  authDomain: "chidambaram-d0257.firebaseapp.com",
+  projectId: "chidambaram-d0257",
+  storageBucket: "chidambaram-d0257.firebasestorage.app",
+  messagingSenderId: "765266295460",
+  appId: "1:765266295460:web:e3309005d454516c92c431",
+  measurementId: "G-YCPV1LGQ5X"
 };
 
 // Initialize Firebase
