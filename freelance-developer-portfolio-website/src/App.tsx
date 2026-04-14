@@ -69,7 +69,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'pricing', 'booking'];
+      const sections = ['home', 'about', 'services', 'team', 'pricing', 'booking'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -122,6 +122,7 @@ export default function App() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Team', href: '#team' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Booking', href: '#booking' },
   ];
@@ -427,6 +428,47 @@ export default function App() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="py-20 px-4 relative">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                My Team
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto mt-4">
+                The brilliant minds working alongside me to deliver exceptional results
+              </p>
+              <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-6" />
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <ScrollReveal delay={100}>
+              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-3xl font-bold">
+                  SE
+                </div>
+                <h3 className="text-2xl font-bold mb-2">s.eraiamudhan</h3>
+                <p className="text-indigo-400 mb-4">Team Member</p>
+                <p className="text-gray-400">Dedicated professional contributing to our standard of excellence.</p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-3xl font-bold">
+                  SL
+                </div>
+                <h3 className="text-2xl font-bold mb-2">s.losehwaran</h3>
+                <p className="text-indigo-400 mb-4">Team Member</p>
+                <p className="text-gray-400">Passionate collaborator delivering outstanding project outcomes.</p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
