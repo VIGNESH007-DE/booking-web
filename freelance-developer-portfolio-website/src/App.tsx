@@ -25,7 +25,7 @@ function ScrollReveal({ children, delay = 0 }: any) {
       if (entry.isIntersecting) {
         setTimeout(() => setIsVisible(true), delay);
       }
-    });
+    }, { threshold: 0.1 });
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -44,6 +44,8 @@ function ScrollReveal({ children, delay = 0 }: any) {
 }
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState('home');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,6 +53,7 @@ export default function App() {
     project: ''
   });
 
+  // 🔥 TEAM DATA
   const teamMembers = [
     {
       name: 'S. Eraiamudhan',
@@ -64,27 +67,94 @@ export default function App() {
     }
   ];
 
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
+    { name: 'Team', href: '#team' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Booking', href: '#booking' },
+  ];
+
+  const pricingPlans = [
+    {
+      name: 'Starter',
+      price: '₹4,999',
+      features: ['Single Page', 'Responsive', 'Basic SEO']
+    },
+    {
+      name: 'Pro',
+      price: '₹9,999',
+      features: ['Multi Page', 'Animations', 'Database']
+    },
+    {
+      name: 'Enterprise',
+      price: '₹14,999',
+      features: ['Full App', 'API', 'Dashboard']
+    }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.href);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(link.href.replace('#', ''));
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
     await addDoc(collection(db, 'bookings'), {
       ...formData,
       timestamp: serverTimestamp()
     });
-    alert("Submitted!");
+
+    alert("Submitted Successfully!");
   };
 
   return (
     <div className="bg-[#0f0f23] text-white">
 
+      {/* NAVBAR */}
+      <nav className="fixed top-0 w-full bg-black/40 backdrop-blur z-50">
+        <div className="flex justify-between px-6 py-4">
+          <h1 className="font-bold text-xl">SV</h1>
+          <div className="flex gap-4">
+            {navLinks.map(link => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={activeSection === link.href.slice(1)
+                  ? "text-white"
+                  : "text-gray-400"}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       {/* HERO */}
-      <section className="text-center py-20">
-        <h1 className="text-5xl font-bold">S. Vigneshwaran</h1>
-        <p className="text-gray-400 mt-4">Freelance Web Developer</p>
+      <section id="home" className="text-center py-32">
+        <ScrollReveal>
+          <h1 className="text-6xl font-bold">S. Vigneshwaran</h1>
+          <p className="text-gray-400 mt-4">Freelance Web Developer</p>
+        </ScrollReveal>
       </section>
 
       {/* SERVICES */}
-      <section className="py-20 text-center">
-        <h2 className="text-4xl font-bold mb-10">Services</h2>
+      <section id="services" className="py-20 text-center">
+        <h2 className="text-4xl mb-10">Services</h2>
         <div className="grid md:grid-cols-3 gap-6 px-6">
           {["Website", "Web App", "E-Commerce"].map((s, i) => (
             <ScrollReveal key={i}>
@@ -94,9 +164,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* TEAM SECTION */}
+      {/* TEAM */}
       <section id="team" className="py-20 text-center">
-        <h2 className="text-4xl font-bold mb-10">My Team</h2>
+        <h2 className="text-4xl mb-10">My Team</h2>
 
         <div className="grid md:grid-cols-2 gap-8 px-6">
           {teamMembers.map((member, i) => (
@@ -114,37 +184,51 @@ export default function App() {
         </div>
       </section>
 
-      {/* BOOKING FORM */}
-      <section className="py-20 text-center">
-        <h2 className="text-4xl font-bold mb-10">Book Project</h2>
+      {/* PRICING */}
+      <section id="pricing" className="py-20 text-center">
+        <h2 className="text-4xl mb-10">Pricing</h2>
+        <div className="grid md:grid-cols-3 gap-6 px-6">
+          {pricingPlans.map((plan, i) => (
+            <ScrollReveal key={i}>
+              <div className="glass p-6 rounded-xl">
+                <h3 className="text-xl">{plan.name}</h3>
+                <p className="text-2xl">{plan.price}</p>
+                <ul>
+                  {plan.features.map((f, j) => <li key={j}>{f}</li>)}
+                </ul>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* BOOKING */}
+      <section id="booking" className="py-20 text-center">
+        <h2 className="text-4xl mb-10">Book Project</h2>
 
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
-          <input
-            placeholder="Name"
-            className="w-full p-3 bg-white/10 rounded"
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
-          <input
-            placeholder="Email"
-            className="w-full p-3 bg-white/10 rounded"
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
-          <input
-            placeholder="Phone"
-            className="w-full p-3 bg-white/10 rounded"
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          />
-          <textarea
-            placeholder="Project Details"
-            className="w-full p-3 bg-white/10 rounded"
-            onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-          />
+          <input placeholder="Name" className="w-full p-3 bg-white/10 rounded"
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+
+          <input placeholder="Email" className="w-full p-3 bg-white/10 rounded"
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+
+          <input placeholder="Phone" className="w-full p-3 bg-white/10 rounded"
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+
+          <textarea placeholder="Project Details" className="w-full p-3 bg-white/10 rounded"
+            onChange={(e) => setFormData({ ...formData, project: e.target.value })} />
 
           <button className="bg-indigo-600 px-6 py-3 rounded">
             Submit
           </button>
         </form>
       </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-gray-400">
+        © 2026 S. Vigneshwaran
+      </footer>
 
     </div>
   );
