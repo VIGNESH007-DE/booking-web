@@ -134,23 +134,22 @@ body {
 }
 
 .animate-cinematic-pan {
-  animation: cinematicPan 3.5s ease-out forwards;
+  animation: cinematicPan 4.5s ease-out forwards;
 }
 
-@keyframes fadeOutSplash {
-  0% { opacity: 1; z-index: 9999; }
-  85% { opacity: 1; z-index: 9999; }
-  100% { opacity: 0; z-index: -1; visibility: hidden; }
+@keyframes hideSplash {
+  0% { z-index: 9999; opacity: 1; }
+  90% { z-index: 9999; opacity: 1; }
+  100% { z-index: -1; opacity: 0; visibility: hidden; }
 }
 
 .splash-screen {
-  animation: fadeOutSplash 3.5s ease-out forwards;
+  animation: hideSplash 4.5s forwards;
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #020617;
 }
 
 @keyframes scaleUp {
@@ -161,4 +160,27 @@ body {
 
 .splash-logo {
   animation: scaleUp 1s ease-out forwards;
+}
+
+@keyframes logoDisappear {
+  0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+  100% { opacity: 0; transform: scale(1.5); filter: blur(10px); visibility: hidden; }
+}
+
+.animate-logo-disappear {
+  animation: logoDisappear 0.6s ease-in forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes blockDisappear {
+  0% { transform: scale(1) translateZ(0) rotateX(0) rotateY(0); opacity: 1; }
+  100% { 
+    transform: scale(0) translateZ(var(--tz)) rotateX(var(--rx)) rotateY(var(--ry)); 
+    opacity: 0; 
+  }
+}
+
+.animate-block-disappear {
+  animation: blockDisappear 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-style: preserve-3d;
 }

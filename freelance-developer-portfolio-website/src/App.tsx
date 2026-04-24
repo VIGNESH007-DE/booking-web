@@ -19,7 +19,17 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const SplashScreen = () => {
-  const bubbles = Array.from({ length: 30 }).map((_, i) => ({
+  const [blocks] = useState(() => Array.from({ length: 150 }).map((_, i) => ({
+    id: i,
+    col: i % 15,
+    row: Math.floor(i / 15),
+    delay: 2.0 + Math.random() * 1.5,
+    tz: Math.random() * 500,
+    rx: (Math.random() - 0.5) * 180,
+    ry: (Math.random() - 0.5) * 180,
+  })));
+
+  const [bubbles] = useState(() => Array.from({ length: 30 }).map((_, i) => ({
     id: i,
     size: Math.random() * 40 + 10,
     left: Math.random() * 100,
@@ -27,14 +37,35 @@ const SplashScreen = () => {
     duration: Math.random() * 1 + 1.5,
     translateX: (Math.random() - 0.5) * 50 + 'vw',
     color: ['bg-blue-500', 'bg-emerald-400', 'bg-indigo-500', 'bg-slate-400'][Math.floor(Math.random() * 4)]
-  }));
+  })));
 
   return (
-    <div className="splash-screen">
-      {/* Background Cinematic Image */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute inset-0 bg-[#020617]/60 z-10 backdrop-blur-sm"></div>
-        <img src={heroImage} alt="Intro Scene" className="w-full h-full object-cover animate-cinematic-pan" />
+    <div className="splash-screen fixed inset-0 z-[9999] pointer-events-none flex items-center justify-center overflow-hidden">
+      {/* Background Cinematic Image - Broken into blocks */}
+      <div className="absolute inset-0 grid grid-cols-[repeat(15,minmax(0,1fr))] grid-rows-[repeat(10,minmax(0,1fr))] w-full h-full z-0 animate-cinematic-pan" style={{ perspective: '1000px' }}>
+        {blocks.map(b => (
+          <div
+            key={b.id}
+            className="animate-block-disappear w-full h-full relative"
+            style={{
+              animationDelay: `${b.delay}s`,
+              '--tz': `${b.tz}px`,
+              '--rx': `${b.rx}deg`,
+              '--ry': `${b.ry}deg`
+            } as React.CSSProperties}
+          >
+            <div 
+              className="absolute inset-0 w-full h-full"
+              style={{
+                backgroundImage: `url(${heroImage})`,
+                backgroundSize: '1500% 1000%',
+                backgroundPosition: `${(b.col / 14) * 100}% ${(b.row / 9) * 100}%`,
+              }}
+            >
+               <div className="w-full h-full bg-[#020617]/50 backdrop-blur-[2px]"></div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {bubbles.map(b => (
@@ -52,7 +83,7 @@ const SplashScreen = () => {
           } as React.CSSProperties}
         />
       ))}
-      <div className="z-30 splash-logo relative">
+      <div className="z-30 splash-logo relative animate-logo-disappear">
         <h1 className="text-7xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(59,130,246,0.8)]">
           SV
         </h1>
