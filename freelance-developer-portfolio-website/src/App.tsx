@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import heroImage from './assets/hero_image.png';
 
 // Firebase Configuration - Replace with your own config
 const firebaseConfig = {
@@ -329,15 +330,12 @@ export default function App() {
       <section id="home" className="min-h-screen flex items-center justify-center relative px-4 pt-16">
         <div className="max-w-7xl mx-auto text-center z-10">
           <ScrollReveal>
-            <div className="mb-6 inline-block animate-float">
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-emerald-400 p-1 animate-pulse-glow shadow-[0_0_40px_rgba(59,130,246,0.3)]">
-                <div className="w-full h-full rounded-full bg-[#020617] flex items-center justify-center">
-                  <span className="text-5xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                    SV
-                  </span>
+             <div className="mb-8 inline-block animate-float w-full max-w-lg mx-auto">
+                <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3)] border border-blue-400/20 group">
+                  <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
+                  <img src={heroImage} alt="Futuristic Developer" className="w-full h-auto object-cover opacity-90 transition duration-700 group-hover:opacity-100 group-hover:scale-105" />
                 </div>
-              </div>
-            </div>
+             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
