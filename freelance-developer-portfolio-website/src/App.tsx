@@ -25,7 +25,7 @@ const SplashScreen = () => {
     delay: Math.random() * 0.5,
     duration: Math.random() * 1 + 1.5,
     translateX: (Math.random() - 0.5) * 50 + 'vw',
-    color: ['bg-fuchsia-500', 'bg-cyan-400', 'bg-yellow-400', 'bg-violet-500'][Math.floor(Math.random() * 4)]
+    color: ['bg-blue-500', 'bg-emerald-400', 'bg-indigo-500', 'bg-slate-400'][Math.floor(Math.random() * 4)]
   }));
 
   return (
@@ -46,7 +46,7 @@ const SplashScreen = () => {
         />
       ))}
       <div className="z-10 splash-logo">
-        <h1 className="text-7xl font-black bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-2xl">
+        <h1 className="text-7xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-2xl">
           SV
         </h1>
       </div>
@@ -250,9 +250,9 @@ export default function App() {
       
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-fuchsia-500/20 rounded-full blur-[100px] animate-float" />
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-500/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-float" />
+        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Navigation */}
@@ -260,7 +260,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <a href="#home" className="text-2xl font-black bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <a href="#home" className="text-2xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 SV
               </a>
             </div>
@@ -330,9 +330,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto text-center z-10">
           <ScrollReveal>
             <div className="mb-6 inline-block animate-float">
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-500 p-1 animate-pulse-glow shadow-[0_0_40px_rgba(34,211,238,0.4)]">
-                <div className="w-full h-full rounded-full bg-[#0a0a1a] flex items-center justify-center">
-                  <span className="text-5xl font-black bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-emerald-400 p-1 animate-pulse-glow shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                <div className="w-full h-full rounded-full bg-[#020617] flex items-center justify-center">
+                  <span className="text-5xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                     SV
                   </span>
                 </div>
@@ -342,11 +342,11 @@ export default function App() {
 
           <ScrollReveal delay={200}>
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-fuchsia-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
                 S. Vigneshwaran
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-cyan-50/80 mb-8 max-w-2xl mx-auto font-light">
+            <p className="text-xl md:text-2xl text-blue-50/80 mb-8 max-w-2xl mx-auto font-light">
               Freelance Web Developer crafting modern, high-performance digital experiences
             </p>
           </ScrollReveal>
@@ -355,7 +355,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#booking"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-fuchsia-600 rounded-xl font-bold text-white hover:from-cyan-400 hover:to-fuchsia-500 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-xl shadow-fuchsia-500/25"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl font-bold text-white hover:from-blue-500 hover:to-emerald-400 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-xl shadow-blue-500/25"
               >
                 Start Your Project
               </a>
@@ -394,10 +394,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 About Me
               </h2>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 mx-auto rounded-full shadow-[0_0_15px_rgba(192,38,211,0.5)]" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-emerald-500 mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
             </div>
           </ScrollReveal>
 
@@ -429,8 +429,8 @@ export default function App() {
                   { number: '5+', label: 'Years Experience' },
                   { number: '100%', label: 'Client Satisfaction' }
                 ].map((stat, index) => (
-                  <div key={index} className="glass rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] border border-cyan-500/10">
-                    <div className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
+                  <div key={index} className="glass rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] border border-blue-500/10">
+                    <div className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
                       {stat.number}
                     </div>
                     <div className="text-gray-400">{stat.label}</div>
@@ -447,22 +447,22 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 My Services
               </h2>
-              <p className="text-cyan-50/70 max-w-2xl mx-auto mt-4 text-lg">
+              <p className="text-blue-50/70 max-w-2xl mx-auto mt-4 text-lg">
                 I offer a comprehensive range of web development services tailored to your unique business needs
               </p>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-emerald-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ScrollReveal key={index} delay={index * 100}>
-                <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(192,38,211,0.2)] border border-fuchsia-500/10 group">
+                <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(16,185,129,0.15)] border border-emerald-500/10 group">
                   <div className="text-5xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">{service.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">{service.title}</h3>
                   <p className="text-gray-300 leading-relaxed font-light">{service.description}</p>
                 </div>
               </ScrollReveal>
@@ -476,39 +476,40 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 My Team
               </h2>
-              <p className="text-cyan-50/70 max-w-2xl mx-auto mt-4 text-lg">
+              <p className="text-blue-50/70 max-w-2xl mx-auto mt-4 text-lg">
                 The brilliant minds working alongside me to deliver exceptional results
               </p>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(192,38,211,0.5)]" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-emerald-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <ScrollReveal delay={100}>
-              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] border border-cyan-500/10 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-500 flex items-center justify-center text-3xl font-black shadow-lg">
+              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] border border-blue-500/10 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-3xl font-black shadow-lg">
                   SE
                 </div>
                 <h3 className="text-2xl font-bold mb-2">s.eraiamudhan</h3>
-                <p className="text-fuchsia-400 mb-4 font-semibold tracking-wide uppercase text-sm">Team Member</p>
+                <p className="text-emerald-400 mb-4 font-semibold tracking-wide uppercase text-sm">Team Member</p>
                 <p className="text-gray-300 font-light">Dedicated professional contributing to our standard of excellence.</p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(192,38,211,0.2)] border border-fuchsia-500/10 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-fuchsia-500 to-yellow-500 flex items-center justify-center text-3xl font-black shadow-lg">
+              <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] border border-emerald-500/10 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center text-3xl font-black shadow-lg">
                   SL
                 </div>
                 <h3 className="text-2xl font-bold mb-2">s.losehwaran</h3>
-                <p className="text-cyan-400 mb-4 font-semibold tracking-wide uppercase text-sm">Team Member</p>
+                <p className="text-blue-400 mb-4 font-semibold tracking-wide uppercase text-sm">Team Member</p>
                 <p className="text-gray-300 font-light">Passionate collaborator delivering outstanding project outcomes.</p>
               </div>
             </ScrollReveal>
           </div>
+
         </div>
       </section>
 
@@ -517,13 +518,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 Pricing Plans
               </h2>
-              <p className="text-cyan-50/70 max-w-2xl mx-auto mt-4 text-lg">
+              <p className="text-blue-50/70 max-w-2xl mx-auto mt-4 text-lg">
                 Transparent pricing tailored to your project requirements
               </p>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-emerald-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
             </div>
           </ScrollReveal>
 
@@ -531,22 +532,22 @@ export default function App() {
             {pricingPlans.map((plan, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <div className={`glass rounded-2xl p-8 transition-all duration-300 relative ${
-                  plan.popular ? 'border-2 border-cyan-400 shadow-[0_0_30px_rgba(34,211,238,0.3)] transform -translate-y-2' : 'border border-white/10 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]'
+                  plan.popular ? 'border-2 border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.2)] transform -translate-y-2' : 'border border-white/10 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]'
                 }`}>
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
                       Most Popular
                     </div>
                   )}
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <p className="text-gray-400 mb-4">{plan.period}</p>
-                  <div className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                  <div className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                     {plan.price}
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">
-                        <svg className="w-5 h-5 text-fuchsia-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                         <span className="text-gray-300 font-light">{feature}</span>
@@ -557,7 +558,7 @@ export default function App() {
                     href="#booking"
                     className={`block text-center px-6 py-4 rounded-xl font-bold transition-all duration-300 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-white hover:shadow-[0_0_20px_rgba(192,38,211,0.5)] transform hover:scale-105'
+                        ? 'bg-gradient-to-r from-blue-600 to-emerald-500 text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] transform hover:scale-105'
                         : 'bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20'
                     }`}
                   >
@@ -575,24 +576,24 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-md">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-md">
                 Book Your Project
               </h2>
-              <p className="text-cyan-50/70 max-w-2xl mx-auto mt-4 text-lg">
+              <p className="text-blue-50/70 max-w-2xl mx-auto mt-4 text-lg">
                 Ready to start your project? Fill out the form below and I'll get back to you within 24 hours
               </p>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(192,38,211,0.5)]" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-emerald-500 mx-auto rounded-full mt-6 shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="max-w-2xl mx-auto glass rounded-2xl p-8 border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
-              <div className="absolute -top-40 -right-40 w-80 h-80 bg-fuchsia-500/20 blur-[100px] rounded-full pointer-events-none" />
-              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/20 blur-[100px] rounded-full pointer-events-none" />
+            <div className="max-w-2xl mx-auto glass rounded-2xl p-8 border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden">
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 blur-[100px] rounded-full pointer-events-none" />
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-500/20 blur-[100px] rounded-full pointer-events-none" />
               
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-cyan-50 mb-2 tracking-wide">
+                  <label htmlFor="name" className="block text-sm font-semibold text-blue-50 mb-2 tracking-wide">
                     Your Name *
                   </label>
                   <input
@@ -601,13 +602,13 @@ export default function App() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder-gray-500 text-white"
+                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder-gray-500 text-white"
                     placeholder="Enter your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-cyan-50 mb-2 tracking-wide">
+                  <label htmlFor="email" className="block text-sm font-semibold text-blue-50 mb-2 tracking-wide">
                     Email Address *
                   </label>
                   <input
@@ -616,13 +617,13 @@ export default function App() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder-gray-500 text-white"
+                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder-gray-500 text-white"
                     placeholder="Enter your email"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-cyan-50 mb-2 tracking-wide">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-blue-50 mb-2 tracking-wide">
                     Phone Number *
                   </label>
                   <input
@@ -631,13 +632,13 @@ export default function App() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder-gray-500 text-white"
+                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder-gray-500 text-white"
                     placeholder="Enter your phone number"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="project" className="block text-sm font-semibold text-cyan-50 mb-2 tracking-wide">
+                  <label htmlFor="project" className="block text-sm font-semibold text-blue-50 mb-2 tracking-wide">
                     Project Details *
                   </label>
                   <textarea
@@ -646,7 +647,7 @@ export default function App() {
                     rows={5}
                     value={formData.project}
                     onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder-gray-500 text-white resize-none"
+                    className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder-gray-500 text-white resize-none"
                     placeholder="Describe your project requirements..."
                   />
                 </div>
@@ -654,7 +655,7 @@ export default function App() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-fuchsia-600 rounded-xl font-bold text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transform hover:-translate-y-1"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-xl font-bold text-white shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transform hover:-translate-y-1"
                 >
                   {isSubmitting ? (
                     <>
@@ -697,7 +698,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-black bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-4 drop-shadow-md">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mb-4 drop-shadow-md">
                 S. Vigneshwaran
               </h3>
               <p className="text-gray-400">

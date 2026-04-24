@@ -114,7 +114,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #090915 0%, #15092a 50%, #06112a 100%);
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
   min-height: 100vh;
 }
 
@@ -141,7 +141,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #090915;
+  background-color: #020617;
 }
 
 @keyframes scaleUp {
