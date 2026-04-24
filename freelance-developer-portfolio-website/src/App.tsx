@@ -31,10 +31,16 @@ const SplashScreen = () => {
 
   return (
     <div className="splash-screen">
+      {/* Background Cinematic Image */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute inset-0 bg-[#020617]/60 z-10 backdrop-blur-sm"></div>
+        <img src={heroImage} alt="Intro Scene" className="w-full h-full object-cover animate-cinematic-pan" />
+      </div>
+
       {bubbles.map(b => (
         <div
           key={b.id}
-          className={`absolute rounded-full opacity-0 animate-bubble ${b.color} shadow-lg shadow-white/20`}
+          className={`absolute rounded-full opacity-0 animate-bubble ${b.color} shadow-lg shadow-white/20 z-20`}
           style={{
             width: b.size,
             height: b.size,
@@ -46,8 +52,8 @@ const SplashScreen = () => {
           } as React.CSSProperties}
         />
       ))}
-      <div className="z-10 splash-logo">
-        <h1 className="text-7xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-2xl">
+      <div className="z-30 splash-logo relative">
+        <h1 className="text-7xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(59,130,246,0.8)]">
           SV
         </h1>
       </div>
@@ -330,12 +336,15 @@ export default function App() {
       <section id="home" className="min-h-screen flex items-center justify-center relative px-4 pt-16">
         <div className="max-w-7xl mx-auto text-center z-10">
           <ScrollReveal>
-             <div className="mb-8 inline-block animate-float w-full max-w-lg mx-auto">
-                <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3)] border border-blue-400/20 group">
-                  <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
-                  <img src={heroImage} alt="Futuristic Developer" className="w-full h-auto object-cover opacity-90 transition duration-700 group-hover:opacity-100 group-hover:scale-105" />
+            <div className="mb-6 inline-block animate-float">
+              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-emerald-400 p-1 animate-pulse-glow shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                <div className="w-full h-full rounded-full bg-[#020617] flex items-center justify-center">
+                  <span className="text-5xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                    SV
+                  </span>
                 </div>
-             </div>
+              </div>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>

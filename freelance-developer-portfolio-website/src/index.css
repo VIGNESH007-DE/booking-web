@@ -128,14 +128,23 @@ body {
   animation: bubble-blast 2s ease-out forwards;
 }
 
+@keyframes cinematicPan {
+  0% { transform: scale(1.1) translateX(1%); }
+  100% { transform: scale(1.2) translateX(-2%); }
+}
+
+.animate-cinematic-pan {
+  animation: cinematicPan 3.5s ease-out forwards;
+}
+
 @keyframes fadeOutSplash {
   0% { opacity: 1; z-index: 9999; }
-  80% { opacity: 1; z-index: 9999; }
+  85% { opacity: 1; z-index: 9999; }
   100% { opacity: 0; z-index: -1; visibility: hidden; }
 }
 
 .splash-screen {
-  animation: fadeOutSplash 2.5s ease-out forwards;
+  animation: fadeOutSplash 3.5s ease-out forwards;
   position: fixed;
   inset: 0;
   display: flex;
